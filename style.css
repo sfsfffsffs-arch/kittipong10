@@ -177,3 +177,85 @@ footer a:hover {
         padding: 22px;
     }
 }
+/* ==========================================
+   Space Contact & Footer Style 
+   ========================================== */
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+.contact-container h3 {
+    color: #00f2fe;
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.4);
+}
+
+.contact-subtitle {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+}
+
+/* จัดกลุ่มปุ่มติดต่อ */
+.social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* สไตล์ปุ่มกดสไตล์ไซไฟ */
+.social-btn {
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: white;
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+}
+
+/* เอฟเฟกต์เรืองแสงแยกตามสีของแพลตฟอร์มเมื่อ Hover */
+.social-btn.email:hover {
+    border-color: #00f2fe;
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.5);
+    transform: translateY(-4px);
+}
+
+.social-btn.facebook:hover {
+    border-color: #1877f2;
+    box-shadow: 0 0 20px rgba(24, 119, 242, 0.5);
+    transform: translateY(-4px);
+}
+
+.social-btn.instagram:hover {
+    border-color: #c13584;
+    box-shadow: 0 0 20px rgba(193, 53, 132, 0.5);
+    transform: translateY(-4px);
+}
+
+.social-btn.github:hover {
+    border-color: #f0f6fc;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    transform: translateY(-4px);
+}
+
+/* เส้นคั่นฟุตเตอร์ */
+.footer-line {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #334155, transparent);
+    margin: 20px 0;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: #475569;
+}
