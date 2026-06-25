@@ -309,3 +309,214 @@ footer a:hover {
         transform: rotate(360deg);
     }
 }
+/* ==========================================
+   Space Advanced Projects Grid Style 
+   ========================================== */
+.projects-section {
+    position: relative;
+}
+
+.section-desc {
+    color: #94a3b8;
+    margin-top: -15px;
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+
+/* จัดเลย์เอาต์การ์ดเป็นแบบตารางเหลื่อมกันสวยงาม (Grid) */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 10px;
+}
+
+/* ดีไซน์หน้ากากการ์ดโฮโลแกรมไซไฟ */
+.project-card {
+    position: relative;
+    background: rgba(30, 41, 59, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 30px 25px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* ไอคอนหน้าผลงาน */
+.project-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 8px rgba(0, 242, 254, 0.4));
+}
+
+.project-card h3 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    transition: color 0.3s;
+}
+
+.project-card p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1; /* ดันแท็กข้างล่างให้เท่ากัน */
+}
+
+/* แท็กบอกสกิลที่ใช้ในผลงานนั้น ๆ */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-tags span {
+    background: rgba(181, 23, 158, 0.15);
+    color: #ff007f;
+    border: 1px solid rgba(181, 23, 158, 0.3);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   Hover Effects - เอฟเฟกต์วาร์ปเรืองแสง
+   ========================================== */
+.project-card:hover {
+    transform: translateY(-10px);
+    background: rgba(30, 41, 59, 0.75);
+    border-color: rgba(0, 242, 254, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 242, 254, 0.15), 0 0 15px rgba(0, 242, 254, 0.1);
+}
+
+.project-card:hover h3 {
+    color: #00f2fe; /* ชื่อผลงานจะเปลี่ยนเป็นสีฟ้านีออนตอนชี้ */
+}
+
+/* แอนิเมชันตอนเลื่อนสกรอลล์ให้การ์ดค่อยๆ เด้งแยกกัน */
+.animate-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.show .animate-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ทำให้การ์ดแต่ละใบโผล่ขึ้นมาเหลื่อมเวลากันนิด ๆ ดูโปรมาก */
+.animate-card:nth-child(1) { transition-delay: 0.1s; }
+.animate-card:nth-child(2) { transition-delay: 0.2s; }
+.animate-card:nth-child(3) { transition-delay: 0.3s; }
+/* ==========================================
+   Space Project Gallery Style 
+   ========================================== */
+.gallery-section {
+    position: relative;
+}
+
+/* จัดรูปแบบตารางแสดงรูปภาพ */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.gallery-item {
+    text-align: center;
+}
+
+/* กล่องครอบรูปภาพเพื่อทำขอบนีออน */
+.gallery-img-box {
+    position: relative;
+    width: 100%;
+    height: 180px; /* กำหนดความสูงของกรอบรูป */
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #05070c;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* สไตล์ตัวรูปภาพ */
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ตัดรูปให้พอดีกรอบอัติโนมัติ ไม่บดบังอัตราส่วน */
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* หน้ากากโฮโลแกรมที่จะแสดงตอนเอาเมาส์มาชี้ (Hover Overlay) */
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(181, 23, 158, 0.4); /* เลเยอร์สีชมพูนีออนโปร่งแสง */
+    backdrop-filter: blur(3px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.gallery-overlay span {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 8px 18px;
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    background: rgba(11, 15, 25, 0.6);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    transform: translateY(10px);
+    transition: transform 0.4s ease;
+}
+
+/* ชื่อใต้รูปภาพผลงาน */
+.gallery-item h4 {
+    color: #a5b4fc;
+    margin-top: 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+/* ==========================================
+   Hover Effects - เอฟเฟกต์แผงควบคุมแกลเลอรี
+   ========================================== */
+.gallery-img-box:hover {
+    transform: translateY(-5px);
+    border-color: #b5179e; /* เปลี่ยนขอบเป็นสีชมพูนีออน */
+    box-shadow: 0 10px 25px rgba(181, 23, 158, 0.3), 0 0 15px rgba(181, 23, 158, 0.2);
+    cursor: pointer;
+}
+
+/* สั่งให้รูปภาพซูมเข้าแบบนุ่มนวล */
+.gallery-img-box:hover .gallery-img {
+    transform: scale(1.1);
+}
+
+/* เปิดหน้ากากสีชมพูโฮโลแกรม */
+.gallery-img-box:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-img-box:hover .gallery-overlay span {
+    transform: translateY(0);
+}
+
+/* เปลี่ยนสีตัวหนังสือใต้รูปตอนชี้ */
+.gallery-item:hover h4 {
+    color: #00f2fe; /* เปลี่ยนเป็นสีฟ้านีออน */
+}
