@@ -259,3 +259,53 @@ footer a:hover {
     font-size: 0.85rem;
     color: #475569;
 }
+/* ==========================================
+   Space Profile Image Style 
+   ========================================== */
+.profile-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: transparent; /* ปรับพื้นหลังให้กลืนไปกับอวกาศ */
+    box-shadow: none;        /* เอาเงากล่องเก่าออก */
+    border: none;            /* เอาเส้นขอบเก่าออก */
+    backdrop-filter: none;
+}
+
+/* สร้างวงแหวนนีออนรอบรูป */
+.avatar-wrapper {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 50%;
+    padding: 5px; /* ระยะห่างระหว่างรูปกับแสงเรือง */
+    background: linear-gradient(45deg, #00f2fe, #b5179e); /* ไล่เฉดสีฟ้า-ชมพู */
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.6), 0 0 50px rgba(181, 23, 158, 0.4);
+    animation: orbitGlow 6s linear infinite; /* ใส่แอนิเมชันให้แสงขยับหมุนวน */
+}
+
+/* สไตล์รูปภาพให้ออกมาเป็นทรงกลมไร้ขอบ */
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* บีบรูปให้พอดีวงกลม หัวไม่เบี้ยว */
+    border-radius: 50%;
+    border: 4px solid #0b0f19; /* ขอบสีมืดเพื่อคั่นระหว่างรูปกับแสงนีออน */
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* เอฟเฟกต์ซูมเข้าหากล้องเวลาเอาเมาส์มาชี้ที่รูป */
+.avatar-wrapper:hover .profile-img {
+    transform: scale(1.08);
+    cursor: pointer;
+}
+
+/* แอนิเมชันทำให้แสงนีออนรอบรูป มีการหมุนเวียนเฉดสีเหมือนวงแหวนดาวหาง */
+@keyframes orbitGlow {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
