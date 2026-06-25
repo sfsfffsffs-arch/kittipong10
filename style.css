@@ -1,115 +1,160 @@
 /* Reset */
-* { /* เติม * ตรงนี้เพื่อให้ Reset ทำงานถูกต้อง */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body */
+/* Body - ปรับเป็นสีอวกาศมืดลึก */
 body {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    background: #f5f7fa;
-    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0b0f19; /* สีน้ำเงินเข้มเกือบดำเหมือนอวกาศ */
+    color: #cdd6f4;      /* สีตัวอักษรขาวนวลให้อ่านง่าย */
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* Header */
+/* Header - ทางช้างเผือกและแสงเนบิวลา */
 header {
-    background: linear-gradient(135deg, #0077ff, #00c6ff);
+    background: radial-gradient(circle at center, #1a103c 0%, #0b0f19 100%);
+    position: relative;
     color: white;
     text-align: center;
-    padding: 80px 20px;
+    padding: 100px 20px;
+    border-bottom: 2px solid #392b59;
+    box-shadow: 0 0 30px rgba(0, 242, 254, 0.15);
 }
 
+/* เพิ่มแสงออร่ารอบชื่อ */
 header h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    background: linear-gradient(45deg, #00f2fe, #4facfe, #b5179e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
 }
 
 header p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    color: #a5b4fc;
+    font-weight: 300;
 }
 
-/* Sections */
+/* Sections - ยานอวกาศโปร่งแสง (Glassmorphism) */
 section {
     max-width: 1000px;
-    margin: 30px auto;
-    padding: 30px;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    margin: 40px auto;
+    padding: 35px;
+    background: rgba(15, 23, 42, 0.65); /* พื้นหลังโปร่งแสงเห็นอวกาศข้างหลัง */
+    backdrop-filter: blur(12px);         /* เอฟเฟกต์กระจกฝ้า */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 section h2 {
-    color: #0077ff;
-    margin-bottom: 20px;
-    border-bottom: 3px solid #0077ff;
+    color: #00f2fe; /* แสงเลเซอร์ฟ้า */
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #b5179e; /* เส้นใต้สีนีออนชมพูม่วง */
     display: inline-block;
     padding-bottom: 5px;
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
 }
 
-/* Projects */
+/* Projects - บล็อกจำลองแผงควบคุมไซไฟ */
 .project {
-    background: #f8f9fc;
-    padding: 20px;
-    border-left: 5px solid #0077ff;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    transition: 0.3s;
+    background: rgba(30, 41, 59, 0.5);
+    padding: 25px;
+    border-left: 5px solid #b5179e;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
+/* เอฟเฟกต์วาร์ปยกลอยเวลา Hover */
 .project:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-8px) scale(1.01);
+    border-left-color: #00f2fe;
+    background: rgba(30, 41, 59, 0.8);
+    box-shadow: 0 10px 25px rgba(0, 242, 254, 0.2);
 }
 
 .project h3 {
-    color: #222;
+    color: #ffffff;
     margin-bottom: 10px;
+    font-size: 1.4rem;
 }
 
-/* Skills */
+.project p {
+    color: #94a3b8;
+}
+
+/* Skills - ปรับใหม่ให้เรียงเป็นก้อนแคปซูลนีออนสวยงาม */
 #skills ul {
     list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 #skills li {
-    background: #0077ff;
-    color: white;
-    margin: 10px 0;
-    padding: 12px 15px;
-    border-radius: 8px;
-    transition: 0.3s;
+    background: rgba(79, 70, 229, 0.15);
+    color: #00f2fe;
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    margin: 0;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
 }
 
 #skills li:hover {
-    background: #005fcc;
-    transform: translateX(5px);
+    background: #00f2fe;
+    color: #0b0f19;
+    box-shadow: 0 0 15px #00f2fe;
+    transform: translateY(-3px);
+    cursor: default;
 }
 
-/* Footer */
+/* Footer - สถานีอวกาศส่วนท้าย */
 footer {
     text-align: center;
-    background: #222;
-    color: white;
-    padding: 25px;
-    margin-top: 40px;
+    background: #05070c;
+    color: #64748b;
+    padding: 40px 20px;
+    margin-top: 60px;
+    border-top: 1px solid #1e293b;
+}
+
+footer p {
+    margin-bottom: 8px;
 }
 
 footer a {
-    color: #00c6ff;
+    color: #b5179e;
     text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 footer a:hover {
-    text-decoration: underline;
+    color: #00f2fe;
+    text-shadow: 0 0 10px #00f2fe;
 }
 
-/* Animation */
+/* Animation - แอนิเมชันลอยมาจากห้วงลึก */
 .fade-in {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .fade-in.show {
@@ -117,14 +162,18 @@ footer a:hover {
     transform: translateY(0);
 }
 
-/* Responsive */
+/* Responsive - ปรับขนาดหน้าจอเมื่อเปิดในกระสวยอวกาศพกพา (มือถือ) */
 @media (max-width: 768px) {
+    header {
+        padding: 70px 20px;
+    }
+
     header h1 {
-        font-size: 2rem;
+        font-size: 2.3rem;
     }
 
     section {
         margin: 20px;
-        padding: 20px;
+        padding: 22px;
     }
 }
